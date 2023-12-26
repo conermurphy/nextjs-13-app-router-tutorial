@@ -11,13 +11,23 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  user,
+  dashboard,
 }: {
   children: React.ReactNode;
+  user: React.ReactNode;
+  dashboard: React.ReactNode;
 }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="bg-white">{children}</div>
+        <div className="bg-white min-h-screen">
+          {children}
+          <div>
+            <div>{user}</div>
+            <div>{dashboard}</div>
+          </div>
+        </div>
       </body>
     </html>
   );
